@@ -1,14 +1,17 @@
 node 
 {
-stage('gitCheckout') 
+	stage('declareEnvVariables')
 	{
-	def mavenHome  = tool 'myMaven'
+        def mavenHome  = tool 'myMaven'
         env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
-        checkout scm
-    	}
-stage('Build')
+        }
+	stage('gitCheckout') 
 	{
-  sh "mvn package"
+	checkout scm
+    	}
+	stage('Build')
+	{
+  	sh "mvn package"
 	sh "mvn deploy"
 	sh "mvn release:clean -P release"
 	}
