@@ -12,6 +12,5 @@ node
 	stage('Build')
 	{
   	sh "mvn clean package deploy"
-	sh "mvn release:clean -P release"
 	}
 }
