@@ -9,8 +9,12 @@
 	{
 	checkout scm
     	}
-	stage('Build')
+	stage('Build clean package')
 	{
   	sh "mvn clean package deploy"
+	}
+	stage('release')
+	{
+	sh "mvn release:clean -P release"
 	}
 }
