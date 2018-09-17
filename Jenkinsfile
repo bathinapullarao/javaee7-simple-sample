@@ -1,4 +1,4 @@
-node 
+ node 
 {
 	stage('declareEnvVariables')
 	{
@@ -11,6 +11,6 @@ node
     	}
 	stage('Build')
 	{
-  	sh "mvn deploy"
+  	sh "mvn clean package deploy"
 	}
 }
