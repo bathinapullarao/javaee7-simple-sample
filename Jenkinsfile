@@ -18,6 +18,6 @@ node
 	sh "mvn release:clean -P release"
 	}
 	stage('nexus pull')
-	{sh "mvn dependency:get -Durl=http://192.168.91.49:8081/nexus/content/repositories/snapshots -Dartifact=org.javaee7.sample:common:1.11-Dtransitive=false -Ddest=. -s settings.xml"
+	{sh "mvn dependency:get -Durl=http://192.168.91.49:8081/nexus/content/repositories/snapshots -Dartifact=org.javaee7.sample:common:1.11-Dtransitive=false"
 	}
 }
