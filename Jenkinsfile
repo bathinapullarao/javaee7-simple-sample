@@ -18,6 +18,6 @@ node
 	sh "mvn release:clean -P release"
 	}
 	stage('prepare release')
-	{sh "mvn release:prepare -P release"
+	{sh "mvn dependency:get -Durl=http://192.168.91.49:8081/nexus/content/repositories/snapshots -Dartifact=com.my.company:common:LATEST-Dtransitive=false -Ddest=. -s settings.xml"
 	}
 }
